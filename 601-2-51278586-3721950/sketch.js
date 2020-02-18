@@ -8,7 +8,7 @@ Now murders are beginning to occur - we're pretty sure that this is the work of 
 If we can place her near any of the recent crime scenes in the area we should be able narrow down her location.
 
 In the setup function, use a for loop to traverse the sightings, marking all of the locations on the map
-where she was last seen. Do this by drawing LightSeaGreen stroke vertexes at each location.
+where she was last seen. Do this by drawing LightSeaGreen stroke vertexes at each location. (done)
 
 In addition, we've assembled a list of recent thefts in the area. Using another for loop to traverse the
 recent crime records, you should mark those locations on the map. Do this by drawing small, MediumSpringGreen stroke rectangles centered over each location.
@@ -86,20 +86,33 @@ function setup()
 			vertex(criminal_record_coordinate_x[i], criminal_record_coordinate_y[i] )
 			console.log("criminal records coordinates",criminal_record_coordinate_x[i],
 					   criminal_record_coordinate_y[i])
+			
+			
 		}
 	endShape();
 	
 	
-	for(var j = 0; j <killing_record.length ; j++)
+	
+	
+	
+	
+	
+	
+	beginShape();
+	stroke(0, 250, 154)
+	for(var j = 0; j <killing_record.length ; j++) 
 		{
 			console.log("killing coordinates",killing_record[j].PosX,
 					   killing_record[j].PosY)
+			rect(killing_record[j].PosX -5,killing_record[j].PosY -5, 10, 10) //killing_record[j].PosX, killing_record[j].PosY
+		
 		}
+		endShape();
 	
 //	if(dist(criminal_record_coordinate_x[i],
 //		   criminal_record_coordinate_y[i],
-//		   killing_record[i].PosX,
-//		   killing_record[i].PosY < 78))
+//		   killing_record[j].PosX,
+//		   killing_record[j].PosY < 78))
 //	   {
 //		   possibleMatches.push({ 
 //			   crime:{x:killing_record[i].PosX,
